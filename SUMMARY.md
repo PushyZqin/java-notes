@@ -14,5 +14,6 @@
  * [输入输出流](io/io-stream.md)
  * [字节流](io/byte-stream.md)
  * [字符流](io/char-stream.md)
+ * [标准流](io/std-stream.md)
 
 
