@@ -4,7 +4,7 @@
 
 在此之前先了解下`Java`中的名词：
 
-![](http://pan.pushy.site/_uploads/files/java_name.png)
+![](https://static.pushy.site/files/java_name.png)
 
 首先是`java`的安装和配置，下载`JDK`，添加环境变量即可。`IDE`使用[Eclipse](http://mirrors.ustc.edu.cn/eclipse/oomph/epp/oxygen/M5/)或者[intellij IDEA](https://www.jetbrains.com/idea/)
 
