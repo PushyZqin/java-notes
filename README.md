@@ -1,4 +1,4 @@
 # java-notes
 
 
-![](http://pan.pushy.site/_uploads/files/151948246876252.png)
+![](https://static.pushy.site/files/151948246876252.png)

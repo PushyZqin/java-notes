@@ -88,7 +88,7 @@ class OverloadingDemo2 {
 
 ## 3. 重写和重载区别：
 
-![](http://pan.pushy.site/_uploads/files/olAndor.jpg)
+![](https://static.pushy.site/files/olAndor.jpg)
 
 重写是子类覆盖与父类参数个数、类型，返回值相同的函数的行为。重写的作用是**子类需要做出当输入的数据一样，但有别于父类处理的响应**。
 
