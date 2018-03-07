@@ -12,6 +12,7 @@
 * [数据结构]()
  * [泛型](data-structure/generics.md)
  * [传统数据结构](data-structure/traditional.md)
+ * [Collection](data-structure/collection.md)
 * [IO/File操作]()
  * [基本文件操作](io/operate.md)
  * [输入输出流](io/io-stream.md)
@@ -19,6 +20,8 @@
  * [字符流](io/char-stream.md)
  * [标准流](io/std-stream.md)
 * [多线程]()
- * [创建进程](thread/create.md)
+ * [创建线程实例](thread/create.md)
+ * [线程同步](thread/sync.md)
+ * [线程间通信](thread/communication.md)
 
 
