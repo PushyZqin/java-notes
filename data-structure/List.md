@@ -17,7 +17,7 @@ public interface List<E> extends Collection<E> {
 
 ## 2. ArrayList：
 
-该具体类实现了`List`的接口，实现了可变大小的随机数组，使得随机访问的速度快，但是插入与删除元素的效率低。
+该具体类实现了`List`的接口，实现了可变大小的随机数组，是无序的，使得随机访问的速度快，但是插入与删除元素的效率低。
 
 `ArrayList`与传统的数据类型`Vector`十分相似，`ArrayList`与后者的区别在于`Vector`是同步的，是线程安全的，并且访问速度较慢。
 
@@ -57,7 +57,7 @@ public class ArrayListDemo {
 
 ## 3. LinkedList：
 
-该具体类也实现了`List`接口，基于双向循环链表实现的顺序数组，使得随机访问的速度慢，但是插入与删除的效率低，另外`LinkedList`还可以用作栈、队列和双端队列。
+该具体类也实现了`List`接口，基于双向循环链表实现的顺序数组，是有序的，使得随机访问的速度慢，但是插入与删除的效率低，另外`LinkedList`还可以用作栈、队列和双端队列。
 
 ```java
 public class LinkedListDemo {
