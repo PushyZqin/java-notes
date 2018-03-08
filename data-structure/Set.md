@@ -220,3 +220,25 @@ public class TreeSetSortByDesc {
 
 
 ## 4. LinkedHashSet：
+
+`LinkedHashSet`内部使用链表来维护元素的插入顺序，是有序的，也就是元素的顺序是以插入顺序来进行保存的，当遍历该集合时，会以元素的添加顺序来访问集合中的元素。而且具有和`HashSet`一样的查找效率。
+
+```java
+public class LinkedHashSetDemo {
+    public static void main(String[] args) {
+        LinkedHashSet<Integer> linkedHashSe = new LinkedHashSet<Integer>();
+        linkedHashSe.add(2);
+        linkedHashSe.add(1);
+        linkedHashSe.add(4);
+        linkedHashSe.add(3);
+        for (Integer each : linkedHashSe) {
+            System.out.println(each);
+        }
+    }
+}
+
+// 2
+// 1
+// 4
+// 3
+```
