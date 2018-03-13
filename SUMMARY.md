@@ -29,4 +29,6 @@
 * [JSP]()
  * [结构](jsp/structure.md)
  * [基本语法](jsp/syntax.md)
+ * [指令和行为](jsp/directive-action.md)
+ * [隐式对象](jsp/implicit.md)
 
