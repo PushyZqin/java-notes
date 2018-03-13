@@ -182,23 +182,3 @@ while (attrs.hasMoreElements()) {
 ```
 
 ## 5. session对象
-
-### 5.1 定义
-
-`session`对象是用来分别保存每一个用户信息的对象，以便于跟踪用户的操作状态，它保存在客户端，但是`session ID`是保存在客户端（浏览器）当中的。
-
-例如，通过`String getID()`方法返回当前用户唯一的标识`ID`：
-
-```java
-<%= session.getId()%></p>
-
-// 4FD0998074226E137C80E904FC00B372
-```
-
-### 5.2 基本方法
-
-- 通过`setAttribute(name,value)`和`getAttribute(String name)`方法分别来设置指定的名称和值与返回指定名称的对象。
-
-```java
-
-```
