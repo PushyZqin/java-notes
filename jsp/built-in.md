@@ -182,3 +182,117 @@ while (attrs.hasMoreElements()) {
 ```
 
 ## 5. session对象
+
+### 5.1 定义
+
+`session`对象是用来分别保存每一个用户信息的对象，以便于跟踪用户的操作状态，它保存在客户端，但是`session ID`是保存在客户端（浏览器）当中的。
+
+例如，通过`String getID()`方法返回当前用户唯一的标识`ID`：
+
+```java
+<%= session.getId()%></p>
+
+// 4FD0998074226E137C80E904FC00B372
+```
+
+### 5.2 基本方法
+
+- 通过`setAttribute(name,value)`和`Object getAttribute(String name)`方法分别来设置指定的名称和值与返回指定名称的对象，并可以通过`removeAttribute(name)`方法来删除指定名称对象。
+
+```java
+<%
+	session.setAttribute("userID","ABCD");
+    // getAttribute方法的返回值是与名称绑定的对象类型
+    userID = (String) session.getAttribute("userID");
+    
+    session.removeAttribute("userID");
+%>
+```
+
+- `boolean isNew()`方法返回是否为一个新的客户端，或者客户端是否拒绝加入`session`。
+
+```java
+<%
+	if (session.isNew()) {
+    	out.println("欢迎来到我的网站")
+    }
+%>
+```
+
+## 6. pagecontext对象
+
+### 6.1 定义
+
+`pagecontext`对象用来代表整个`JSP`页面，它代表页面上下文，用于访问`JSP`之间的共享数据，使用`pageContext`可以访问`page`、`request`、`session`、`application`范围的变量。
+
+### 6.2 基本方法
+
+- `Object getBuildInObject()`方法返回当前页面的`Object`对象。例如，一个方法中需要传入多个内置对象将不方便，那么可以只传入`PageContext`，用它来调用其他的内置对象。
+
+```java
+import javax.servlet.jsp.PageContext
+
+public void function(PageContext pageContext) throws IOException{
+   // 得到session内置对象并调用其getId()方法
+   pageContext.getSession().getId();
+   // 得到out内置对象并调用其println方法
+   pageContext.getOut().println("hello World");
+}
+```
+
+<br>
+
+>更多关于pagecontext对象的方法可以看[JSP pagecontext对象详解](http://www.51gjie.com/javaweb/831.html)
+
+## 7. out对象
+
+### 7.1 定义
+
+`out`对象用来动态的向`JSP`页面输出字符流，把动态的内容转换成`HTML`形式展示，主要功能就是完成页面的输出操作的。
+
+### 7.2 基本方法
+
+- `getBufferSize()`获取缓冲区大小和`clearBuffer()`清除缓冲区内容用来对缓冲区进行操作。
+
+```java
+<%
+	out.println(out.getBufferSize())
+    // 将数据发送至客户端后，清除缓冲区中的内容
+    out.clearBuffer()
+    // 清除缓冲区中的内容，不将数据发送至客户端
+    out.clear()
+%>
+```
+
+- `println`、`print`用来显示各种数据类型的内容并将其显示在页面当中。
+
+```java
+<%
+	out.println("Hello World")
+%>
+```
+
+## 8. config对象
+
+`config`对象代表当前`JSP`配置信息，实质上是`servletConfig`的一个实例，常用来获取`servlet`初始化参数。
+
+<br>
+
+>更多方法config对象方法可以看[JSP config对象详解](http://www.51gjie.com/javaweb/829.html)
+
+## 9. exception对象
+
+`exception`对象表示的就是`JSP`引擎在执行代码过程中抛出的种种异常，只有在`page`指令中设置`isErrorPage="true"`的页面中才能使用。
+
+```java
+<%@ page errorPage="/error.jsp" isErrorPage="true" %>
+```
+
+或者在`web.xml`中配置：
+
+```xml
+<error-page>
+    <exception-type>java.lang.ArithmeticException</exception-type>
+    <location>/error.jsp</location> 
+</error-page>
+```
