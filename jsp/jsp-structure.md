@@ -1,6 +1,6 @@
 ## 1. 处理过程：
 
-![](https://static.pushy.site/files/jsp_structure-fj3jf-3jfs3-j3jds.png)
+![](https://static.pushy.site/files/jsp_structure_893f-ut02.png)
 
 ## 2. 生命周期：
 

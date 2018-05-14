@@ -27,8 +27,10 @@
  * [线程同步](thread/sync.md)
  * [线程间通信](thread/communication.md)
 * [JSP]()
- * [结构](jsp/structure.md)
+ * [结构](jsp/jsp-structure.md)
  * [基本语法](jsp/syntax.md)
  * [指令和行为](jsp/directive-action.md)
  * [内置对象](jsp/built-in.md)
+* [Servlet]()
+ * [结构](servlet/structure.md)
 
