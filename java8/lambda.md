@@ -36,12 +36,14 @@ for (String feature : features) {
 ```java
 List features = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
 features.forEach(n -> System.out.println(n));
-// features.forEach(n -> System.out::println);  // 使用java8的新特性“方法引用”
+// features.forEach(System.out::println);  // 使用java8的新特性“方法引用”
 ```
 
 ### 2.2 使用lambda和Predicate实现过滤操作
 
 `Predicate`函数式接口的主要作用就是提供一个`test()`方法，接受一个参数返回一个布尔类型，`Predicate`在`stream api`中进行一些判断的时候非常常用
+
+`stream API`中提供了一个 `filter()` 方法，接受一个 `Predicate` 对象，即可以传入一个`lambda`表达式作为过滤逻辑
 
 在下面的代码中，当`condition.test(name)`传入的`name`值符合`filter`传入的`condition`条件时，将会返回`true`
 
@@ -55,7 +57,6 @@ public class PredicateTest {
 //            }
 //        }
 		// 使用了stream API和lambda表达式的优雅写法
-        // Stream API的过滤方法也接受一个Predicate
         names.stream().filter(name -> (condition.test(name))).forEach((name) -> {
             System.out.println(name);
         });
@@ -100,3 +101,11 @@ public static void main(String[] args) {
 
 // USA,JAPAN,FRANCE,GERMANY,ITALY,U.K.,CANADA
 ```
+
+`collect`方法时接受的参数（`Collectors.joining(",")`）是将流中的元素累计到汇总的结果的方式，在本例中就是讲流中操作后的元素再以`，`进行隔开。
+
+<br>
+
+>参考资料
+>
+>[Java8 lambda表达式10个示例](http://www.importnew.com/16436.html)
