@@ -140,10 +140,10 @@ public class synchronizedDemo implements Runnable{
 }
 
 // SyncThread1：0
-// SyncThread1：1
+// SyncThread2：1
 // SyncThread1：2
 // SyncThread2：3
-// SyncThread2：4
+// SyncThread1：4
 // SyncThread2：5
 ```
 
