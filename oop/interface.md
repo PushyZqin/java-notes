@@ -1,4 +1,4 @@
-## 1. 定义接口：
+## 1. 接口定义
 
 接口是抽象方法的集合，通过`interface`来声明，一个类可以通过继承接口的方式，来继承接口中所有的抽象方法。需要明白的是：**类是描述对象的属性和方法，接口包含类要实现的方法集合，所以接口≠类**。
 
@@ -9,7 +9,7 @@
 例如我们可以这样声明一个接口：
 
 ```java
-interface A {
+public interface A {
 	void run(); // 不允许有方法体
 }
 ```
@@ -28,28 +28,48 @@ public class interfaceTest implements A {
 }
 ```
 
-## 2. 接口方法：
+## 2. 接口方法
 
-JAVA`8`中，接口还可以存在默认方法（具有方法体）与静态方法：
+## 2.1 默认方法
 
-例如我们可以声明一个存在方法体的默认方法，并且该方法可以通过类继承接口后调用；
+JAVA`8`中，可以为接口方法提供一个默认实现，用`default`修饰符来标记这样一个方法。
 
 ```java
-interface B {
-    void run();
-
-	default void msg() {
-        System.out.println("Interface Default Method");
+public interface MyCollection {
+    int size();
+    
+    default boolean isEmpty() {
+        return size() == 0;
     }
 }
 ```
 
+这样实现`MyCollection`接口就不用操心`isEmpty`方法了：
+
+```java
+public class MyList implements MyCollection {
+    private int size;
+
+	@Override
+    public int size() {
+        return size;
+    }
+}
+```
+
+使用`MyList`则可以使用`isEmpty()`方法：
+
+```java
+MyCollection list = new MyList();
+list.isEmpty()
+```
+
+## 2.2 静态方法
+
 我们还可以声明一个静态方法，该方法也可以通过类继承接口后直接调用：
 
 ```java
-interface C {
-    void run();
-
+public interface C {
     static int plus(int x) {
         return x + x;
     }
