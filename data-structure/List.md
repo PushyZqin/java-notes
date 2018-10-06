@@ -55,7 +55,9 @@ public class ArrayListDemo {
 // World
 ```
 
-## 3. LinkedList：
+## 3. 链表LinkedList：
+
+![TIM截图20181006124319.png](https://i.loli.net/2018/10/06/5bb83d725053c.png)
 
 该具体类也实现了`List`接口，基于双向循环链表实现的顺序数组，是有序的，使得随机访问的速度慢，但是插入与删除的效率低，另外`LinkedList`还可以用作栈、队列和双端队列。
 
