@@ -56,7 +56,7 @@ System.out.println(pq);  // [2, 3]
 与TreeSet一样，一个优先级队列既可以保存实现了Comparable接口的类对象，也可以保存在构造器中提供的Comparator对象：
 
 ```java
-// 通过Comparator对象涉设置根据字符串的长度来决定元素的优先级
+// 通过Comparator对象设置根据字符串的长度来决定元素的优先级
 PriorityQueue<String> pq2 = new PriorityQueue<>((o1, o2) -> o1.length() - o2.length());
 pq2.add("Brooklynn");
 pq2.add("Lindsey");

@@ -17,6 +17,8 @@ public interface Map<K,V> {
 
 ## 2. HashMap：
 
+### 2.1 基本使用
+
 `HashMap`是基于`hash`实现的，因此访问的速度很快，但是失去了有序性。并且`HashMap`最多只允许一条记录的键为`null`（多余的会被覆盖），允许多条记录的值为`null`。
 
 这与传统的数据类型`HashTable`类似，但是`HashTable`是支持同步的，线程安全的，并且不支持插入`null`值。
@@ -35,43 +37,42 @@ public class HashMapDemo {
         }
     }
 }
-
-// The math grade is： 100
 ```
 
-`Map`接口实现的类对象类型迭代有点区别，`entrySet()`方法返回的是`Entry`类型，这样就可以调用`Entry`对象的`getKey()`和`getValue`方法来获得键和值了：
+### 2.2 映射视图
+
+集合框架不认为Map本身是一个集合，不过，可以得到Map的视图：
 
 ```java
-for (Map.Entry<String,Integer> entry : hashMap.entrySet()) {
-    System.out.println(entry.getKey() + " ： " + entry.getValue());
-}
-
-// English ： 98
-// Chinese ： 99
-// Math ： 100
+Set<K> keySet();  // 键集
+Collection<V> values();  // 值集
+Set<Map.Entry<K,V>> entrySet();   // 键/值集
 ```
 
-同样也可以使用`Iterator`迭代器进行迭代：
+因为Set实现了Collection接口，因此可以通过`for-each`遍历一个Map的所有键（或者值）：
 
 ```java
-Iterator<Map.Entry<String,Integer>> it = hashMap.entrySet().iterator();
-while (it.hasNext()) {
-    Map.Entry<String,Integer> entry = it.next();
-    System.out.println(entry.getKey() + "：" + entry.getValue());
-}
-```
-
-如果你仅仅想迭代`keys`或者`values`的话，也可以通过`keySet()`方法或`values()`方法迭代键和值：
-
-```java
-// 仅迭代键：
-for (String key : hashMap.keySet()) {
+for (String key : map.keySet()) {
     System.out.print(key);
 }
-// 仅迭代值：
-for (Integer value : hashMap.values()) {
-    System.out.print(value);
+```
+
+如果想同时查看键和值，可以通过枚举条目来避免查找值：
+
+```java
+for (Map.Entry<String,Integer> entry : map.entrySet()) {
+    String k = entry.getKey();
+    String v = entry.getvalue();
+    ...
 }
+```
+
+现在，还可以通过更加优雅的`foreach`的方法来遍历键和值：
+
+```java
+map.forEach((k,v) -> {
+    System.out.println(k, v);
+});
 ```
 
 ## 3. TreeMap：
@@ -137,8 +138,6 @@ public class TreeMapSortValue {
 但是`LinkedHashMap`使用了链表结构来维护了记录的插入顺序，在用`Iterator`遍历`LinkedHashMap`时，先得到的记录肯定是先插入的：
 
 ```java
-import java.util.Map.Entry;
-
 public class LinkedHashMapDemo {
     public static void main(String[] args) {
         LinkedHashMap<Double,Integer> linkedHashMap = new LinkedHashMap<>();
