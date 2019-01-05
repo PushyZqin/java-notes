@@ -1,7 +1,7 @@
 # Java Notes
 
 <p align="center">
-<a>
+<a href="https://pushy.site">
     <img src="https://i.loli.net/2019/01/05/5c306a5521c9e.png">
 </a>
 </p>
