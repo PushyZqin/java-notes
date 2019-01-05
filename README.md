@@ -1,6 +1,10 @@
 # Java Notes
 
-<a style="display: flex;justify-content: center;" href="https://pushy.site/"><img src="https://i.loli.net/2019/01/05/5c306a5521c9e.png"></a>
+<p align="center">
+<a>
+    <img src="https://i.loli.net/2019/01/05/5c306a5521c9e.png">
+</a>
+</p>
 
 ## 基础
 
