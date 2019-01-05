@@ -1,6 +1,6 @@
 # Java Notes
 
-<p align="center"><img src="https://static.pushy.site/files/151948246876252.png"></p>
+<p align="center"><img src="https://i.loli.net/2019/01/05/5c306a5521c9e.png"></p>
 
 * [Introduction](README.md)
 * [HelloWorld](HelloWorld.md)
