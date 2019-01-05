@@ -16,6 +16,7 @@
  * [List](data-structure/List.md)
  * [Set](data-structure/Set.md)
  * [Map](data-structure/Map.md)
+ * [LinkedList源码解析](sources/linked-list.md)
 * [IO/File操作]()
  * [基本文件操作](io/operate.md)
  * [输入输出流](io/io-stream.md)
