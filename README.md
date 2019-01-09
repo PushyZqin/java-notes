@@ -28,6 +28,7 @@
  * [Set](data-structure/Set.md)
  * [Map](data-structure/Map.md)
  * [LinkedList源码解析](sources/linked-list.md)
+ * [ArrayList源码解析](source/array-list.md)
 
 ## IO
 

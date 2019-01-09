@@ -4,9 +4,9 @@
 
 从上面的UML图中可以知道：`LinkedList `是一个继承于`AbstractSequentialList`的双向链表。它**也可以被当作堆栈、队列或双端队列进行操作。**
 
-- 它实现 List 接口，能对它进行队列操作。
-- 它实现 Deque 接口，即能将`LinkedList`当作双端队列使用。
-- 它实现了Cloneable接口，即覆盖了函数`clone()`，能进行克隆。
+- 它实现 `List `接口，能对它进行队列操作。
+- 它实现 `Deque `接口，即能将`LinkedList`当作双端队列使用。
+- 它实现了`Cloneable`接口，即覆盖了函数`clone()`，能进行克隆。
 - 它实现`java.io.Serializable`接口，这意味着`LinkedList`支持序列化，能通过序列化去传输。
 - `LinkedList `是非同步的。
 
